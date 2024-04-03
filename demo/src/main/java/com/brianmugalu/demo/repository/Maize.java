@@ -1,2 +1,4 @@
-package com.brianmugalu.demo.repo;public class Maize {
+package com.brianmugalu.demo.repository;
+
+public class Maize {
 }

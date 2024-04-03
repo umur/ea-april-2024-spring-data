@@ -1,4 +1,4 @@
-package com.brianmugalu.demo.controller;
+package com.brianmugalu.demo.service;
 
-public class AddressController {
+public class AddressService {
 }

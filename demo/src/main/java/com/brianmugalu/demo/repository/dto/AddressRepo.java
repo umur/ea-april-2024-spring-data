@@ -1,2 +1,4 @@
-package com.brianmugalu.demo.repository.dto;public class AddressRepo {
+package com.brianmugalu.demo.repository.dto;
+
+public class AddressRepo {
 }

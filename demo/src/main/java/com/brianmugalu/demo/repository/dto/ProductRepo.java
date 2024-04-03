@@ -1,2 +1,4 @@
-package com.brianmugalu.demo.repository.dto;public interface ProductRepo {
+package com.brianmugalu.demo.repository.dto;
+
+public interface ProductRepo {
 }

@@ -1,2 +1,4 @@
-package com.brianmugalu.demo.controller;public class UserController {
+package com.brianmugalu.demo.controller;
+
+public class UserController {
 }
