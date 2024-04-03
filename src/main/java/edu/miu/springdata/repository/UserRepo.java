@@ -1,4 +1,10 @@
 package edu.miu.springdata.repository;
 
-public class UserRepo {
+import edu.miu.springdata.entity.User;
+import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepo extends ListCrudRepository<User, Long> {
+
 }
