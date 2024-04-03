@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "88cead8a-43c3-4848-b6bc-db8557347af2",
+		"name": "Spring Data I",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34047742"
+	},
+	"item": [
+		{
+			"name": "Find all products that cost more than minPrice",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/product/price?minPrice=100",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"product",
+						"price"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "100",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/product/price?minPrice=<number>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"price"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "<number>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"price\": \"<number>\",\n    \"rating\": \"<string>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"products\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        }\n      ]\n    },\n    \"reviews\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"price\": \"<number>\",\n    \"rating\": \"<string>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"products\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        }\n      ]\n    },\n    \"reviews\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      }\n    ]\n  }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get reviews by product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/review/product/4",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"review",
+						"product",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/review/product/:productId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"review",
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"id\": \"<long>\",\n    \"comment\": \"<string>\",\n    \"reviewedProduct\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"price\": \"<number>\",\n      \"rating\": \"<string>\",\n      \"category\": {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"products\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n          }\n        ]\n      },\n      \"reviews\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n        }\n      ]\n    },\n    \"submittedUser\": {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"comment\": \"<string>\",\n    \"reviewedProduct\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"price\": \"<number>\",\n      \"rating\": \"<string>\",\n      \"category\": {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"products\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n          }\n        ]\n      },\n      \"reviews\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n        }\n      ]\n    },\n    \"submittedUser\": {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    }\n  }\n]"
+				}
+			]
+		},
+		{
+			"name": "Find all products in cat category and cost less than maxPrice",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/product/category?maxPrice=3000&categoryId=3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"product",
+						"category"
+					],
+					"query": [
+						{
+							"key": "maxPrice",
+							"value": "3000",
+							"description": "(Required) "
+						},
+						{
+							"key": "categoryId",
+							"value": "3",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/product/category?maxPrice=<number>&categoryId=<long>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"category"
+							],
+							"query": [
+								{
+									"key": "maxPrice",
+									"value": "<number>",
+									"description": "(Required) "
+								},
+								{
+									"key": "categoryId",
+									"value": "<long>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"price\": \"<number>\",\n    \"rating\": \"<string>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"products\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        }\n      ]\n    },\n    \"reviews\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"price\": \"<number>\",\n    \"rating\": \"<string>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"products\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        }\n      ]\n    },\n    \"reviews\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      }\n    ]\n  }\n]"
+				}
+			]
+		},
+		{
+			"name": "Find all products that contain keyword in the name.",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/product/name?keyword=Shorthair",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"product",
+						"name"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Shorthair",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/product/name?keyword=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"name"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"price\": \"<number>\",\n    \"rating\": \"<string>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"products\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        }\n      ]\n    },\n    \"reviews\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"price\": \"<number>\",\n    \"rating\": \"<string>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"products\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n        }\n      ]\n    },\n    \"reviews\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Review detected>\"\n      }\n    ]\n  }\n]"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
