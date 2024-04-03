@@ -3,7 +3,7 @@
 
 In this lab you will develop a Product Review Application.
 
-###  Requirements
+### Requirements
 ---
 * Make domain models for
 	* `Category` with `id` and `name`.
