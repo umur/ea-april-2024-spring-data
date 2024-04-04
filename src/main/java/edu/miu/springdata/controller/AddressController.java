@@ -13,10 +13,6 @@ import java.util.List;
 public class AddressController {
 
     private final AddressService addressService;
-    @PostMapping
-    public Address createAddress(@RequestBody Address address){
-        return addressService.createAddress(address);
-    }
 
     @GetMapping
     public List<Address> getAddress(){
