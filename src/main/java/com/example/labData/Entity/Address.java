@@ -2,21 +2,20 @@ package com.example.labData.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Review {
+public class Address {
     @Id
     private long id;
-    private String comment;
+    private String city;
+    private String street;
+    private String zip;
 
-    @ManyToOne
-    private Product product;
-
-    @ManyToOne
+    @OneToOne
     private User user;
 }

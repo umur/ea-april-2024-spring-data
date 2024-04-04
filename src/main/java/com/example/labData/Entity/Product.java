@@ -1,9 +1,6 @@
 package com.example.labData.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,9 +13,12 @@ public class Product {
     @Id
     private long id;
     private String name;
-    private String color;
+    private double price;
+    private int rating;
 
-    @JoinColumn
-    @OneToMany//(mappedBy = "p1")
+    @ManyToOne
+    private Category category;
+
+    @OneToMany(mappedBy = "product")
     private List<Review> reviews;
 }
