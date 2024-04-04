@@ -2,6 +2,7 @@ package com.brianmugalu.demo.service;
 
 import com.brianmugalu.demo.repository.dto.CategoryRepo;
 import com.brianmugalu.demo.repository.entity.Category;
+import com.brianmugalu.demo.repository.entity.Product;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -38,5 +39,12 @@ public class CategoryService {
 
     public List<Category> getAllCategories() {
         return  categoryRepo.findAll();
+    }
+
+    //For updating category when new product is added
+    public void addToCategory(Long id, Product product){
+        Category category = categoryRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Category with id " + id + " not found"));
+        category.addProduct(product);
+        categoryRepo.save(category);
     }
 }
