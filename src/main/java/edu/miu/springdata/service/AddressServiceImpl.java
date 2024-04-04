@@ -12,11 +12,6 @@ import java.util.List;
 public class AddressServiceImpl implements AddressService {
     private final AddressRepo addressRepo;
     @Override
-    public Address createAddress(Address address) {
-        return addressRepo.save(address);
-    }
-
-    @Override
     public List<Address> getAll() {
         return addressRepo.findAll();
     }
