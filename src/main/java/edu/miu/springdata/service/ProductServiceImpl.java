@@ -1,5 +1,6 @@
 package edu.miu.springdata.service;
 
+import edu.miu.springdata.entity.Category;
 import edu.miu.springdata.entity.Product;
 import edu.miu.springdata.repository.ProductRepo;
 import lombok.RequiredArgsConstructor;
@@ -44,5 +45,15 @@ public class ProductServiceImpl implements ProductService{
     public void deleteById(long id) {
         productRepo.deleteById(id);
 
+    }
+
+    @Override
+    public List<Product> getProductGreaterThanPrice(double price) {
+        return productRepo.findAllByPriceGreaterThan(price);
+    }
+
+    @Override
+    public List<Product> getProductByCategoryAndPrice(Long cat, double price) {
+        return productRepo.findAllByCategoryIdAndPriceGreaterThan(cat, price);
     }
 }
