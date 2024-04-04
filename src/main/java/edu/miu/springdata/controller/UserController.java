@@ -1,6 +1,7 @@
 package edu.miu.springdata.controller;
 
 import edu.miu.springdata.entity.User;
+import edu.miu.springdata.service.UserService;
 import edu.miu.springdata.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,7 @@ import java.util.List;
 @RequestMapping("/users")
 @RestController
 public class UserController {
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
     @PostMapping
     public User createUser(@RequestBody User user){

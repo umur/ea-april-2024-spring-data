@@ -1,7 +1,7 @@
 package edu.miu.springdata.controller;
 
 import edu.miu.springdata.entity.Category;
-import edu.miu.springdata.service.CategoryServiceImpl;
+import edu.miu.springdata.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoryController {
 
-    private final CategoryServiceImpl categoryService;
+    private final CategoryService categoryService;
 
     @PostMapping
     public Category save(@RequestBody Category category){

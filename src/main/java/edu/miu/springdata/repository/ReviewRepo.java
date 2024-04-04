@@ -1,0 +1,8 @@
+package edu.miu.springdata.repository;
+
+import edu.miu.springdata.entity.Review;
+import org.springframework.data.repository.ListCrudRepository;
+
+public interface ReviewRepo extends ListCrudRepository<Review, Long> {
+
+}

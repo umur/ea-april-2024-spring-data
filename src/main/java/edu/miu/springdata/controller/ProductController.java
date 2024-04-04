@@ -1,6 +1,8 @@
 package edu.miu.springdata.controller;
 
+import edu.miu.springdata.entity.Category;
 import edu.miu.springdata.entity.Product;
+import edu.miu.springdata.service.ProductService;
 import edu.miu.springdata.service.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +15,7 @@ import java.util.List;
 
 public class ProductController {
 
-    private final ProductServiceImpl productService;
+    private final ProductService productService;
 
     @PostMapping
     public Product save(@RequestBody Product product){
@@ -33,6 +35,16 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable long id){
         productService.deleteById(id);
+    }
+
+    @GetMapping("/{price}")
+    public List<Product> getProductsGreaterThanPrice(@PathVariable double price){
+        return productService.getProductGreaterThanPrice(price);
+    }
+
+    @GetMapping("/filter")
+    public List<Product> getProductsByCatAndPrice(@RequestParam(name = "cat") Long cat, @RequestParam double price){
+        return productService.getProductByCategoryAndPrice(cat, price);
     }
 
 }
