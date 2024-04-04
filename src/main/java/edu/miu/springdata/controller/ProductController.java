@@ -2,6 +2,7 @@ package edu.miu.springdata.controller;
 
 import edu.miu.springdata.entity.Category;
 import edu.miu.springdata.entity.Product;
+import edu.miu.springdata.service.ProductService;
 import edu.miu.springdata.service.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class ProductController {
 
-    private final ProductServiceImpl productService;
+    private final ProductService productService;
 
     @PostMapping
     public Product save(@RequestBody Product product){
