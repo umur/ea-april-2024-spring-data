@@ -47,4 +47,7 @@ public class ProductController {
         return productService.getProductByCategoryAndPrice(cat, price);
     }
 
+    @GetMapping("/name")
+    public List<Product> getProductsByNameLike(@RequestParam(name="keyword") String keyword){ return productService.getProductsByNameLike(keyword);}
+
 }

@@ -19,4 +19,6 @@ public interface ProductService {
     List<Product> getProductGreaterThanPrice(double price);
 
     List<Product> getProductByCategoryAndPrice(Long cat, double price);
+
+    public List<Product> getProductsByNameLike(String keyword);
 }
