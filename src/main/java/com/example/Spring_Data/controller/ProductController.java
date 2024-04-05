@@ -41,4 +41,19 @@ public class ProductController {
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/price")
+    public ResponseEntity<List<Product>> findAllByPriceGreaterThan(@RequestParam int price) {
+        return ResponseEntity.ok(productService.findAllByPriceGreaterThan(price));
+    }
+
+    @GetMapping("/category")
+    public ResponseEntity<List<Product>> findAllByCategory_IdAndPriceLessThan(@RequestParam int categoryId, @RequestParam int price) {
+        return ResponseEntity.ok(productService.findAllByCategory_IdAndPriceLessThan(categoryId, price));
+    }
+
+    @GetMapping("/name")
+    public ResponseEntity<List<Product>> findAllByNameContains(@RequestParam String name) {
+        return ResponseEntity.ok(productService.findAllByNameContains(name));
+    }
 }

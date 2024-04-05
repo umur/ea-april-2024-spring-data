@@ -33,4 +33,17 @@ public class ProductService {
         Product product = getProductById(id);
         productRepository.delete(product);
     }
+
+    public List<Product> findAllByPriceGreaterThan(int price) {
+        return productRepository.findAllByPriceGreaterThan(price);
+    }
+
+    public List<Product> findAllByCategory_IdAndPriceLessThan(int categoryId, int price) {
+        return productRepository.findAllByCategory_IdAndPriceLessThan(categoryId, price);
+    }
+
+    public List<Product> findAllByNameContains(String name) {
+        return productRepository.findAllByNameContains(name);
+    }
+
 }
