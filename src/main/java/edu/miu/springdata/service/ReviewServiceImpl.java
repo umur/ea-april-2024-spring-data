@@ -41,4 +41,9 @@ public class ReviewServiceImpl implements ReviewService {
         reviewRepo.deleteById(id);
 
     }
+
+    @Override
+    public List<Review> getReviewsByProductId(long id) {
+        return reviewRepo.getReviewsByProductId(id);
+    }
 }

@@ -56,4 +56,9 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> getProductByCategoryAndPrice(Long cat, double price) {
         return productRepo.findAllByCategoryIdAndPriceGreaterThan(cat, price);
     }
+
+    @Override
+    public List<Product> getProductsByNameLike(String keyword) {
+        return productRepo.getProductsByNameLike(keyword);
+    }
 }
