@@ -50,6 +50,13 @@ In this lab you will develop a Product Review Application.
 		 *  > **Pair programming** is an agile software development technique in which two programmers work together at one workstation. One, the _driver_, writes code while the other, the _observer_ or _navigator_ reviews each line of code as it is typed in. The two programmers switch roles frequently. 
 		 * [Wikipedia](https://en.wikipedia.org/wiki/Pair_programming#:~:text=Pair%20programming%20is%20an%20agile,two%20programmers%20switch%20roles%20frequently.)
 
+Please refer to the lab3.postman_collection.json for the sample postman requests.
+
+![image](https://github.com/cnguyen36/ea-april-2024-spring-data/assets/14171570/6d598504-d161-4631-8fe8-fc5895d0b5fa)
+
+![image](https://github.com/cnguyen36/ea-april-2024-spring-data/assets/14171570/a59eaeab-3e4e-4fcd-afef-1ed167c3d0bc)
+
+
 -   Remember to respect the code honor submission policy. All written code must be original. Presenting something as one’s own work when it came from another source is plagiarism and is forbidden.
     
 -   Plagiarism is a very serious thing in all American academic institutions and is guarded against vigilantly by every professor.
