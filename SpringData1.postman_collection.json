@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "ed5e704d-901f-464c-bc6d-d8680fa067c6",
+		"name": "SpringData",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32406839"
+	},
+	"item": [
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "http://localhost:8080/addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/addresses"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/addresses/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/addresses/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "http://localhost:8080/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/users/3"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/users/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/users/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "http://localhost:8080/categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/categories/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/categories/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "http://localhost:8080/reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/reviews/1"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reviews/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/reviews/1"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reviews/product/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/reviews/product/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "http://localhost:8080/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/products"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/products/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/products/2"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/products/min/40",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/products/min/40"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/products/category?cat=Electronics&price=100",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/category?cat=Electronics&price=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"category"
+							],
+							"query": [
+								{
+									"key": "cat",
+									"value": "Electronics"
+								},
+								{
+									"key": "price",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/products/name/Lap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/products/name/Lap"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
