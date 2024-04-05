@@ -1,5 +1,7 @@
 package com.brianmugalu.demo.repository.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -15,5 +17,6 @@ public class Address {
     private String city;
     @OneToOne
     @JoinColumn(name="id_user")
+    @JsonIgnore
     private User user;
 }

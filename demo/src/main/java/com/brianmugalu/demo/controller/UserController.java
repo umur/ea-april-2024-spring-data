@@ -13,30 +13,31 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public Category addUser(@RequestBody User user){
+    public User addUser(@RequestBody User user){
         return userService.addUser(user);
     }
     @PutMapping("/{id}/{password}")
-    public Category updateUserPassword(@PathVariable Long id, @PathVariable String password){
+    public User updateUserPassword(@PathVariable Long id, @PathVariable String password){
         return userService.updateUserPassword(id,password);
     }
 
-    @GetMapping
-    public Review getUserReviews(){
-        return  userService.getUserReviews();
+    @GetMapping("/{id}")
+    public Review getUserReviews(@PathVariable(name = "id") Long userId){
+        return  userService.getUserReviews(userId);
     }
 
-    @GetMapping("/address")
-    public Address getUserAddress(){
-        return userService.getUserAddress();
+    @GetMapping("/address/{id}")
+    public Address getUserAddress(@PathVariable(name = "id") Long userId){
+        return userService.getUserAddress(userId);
     }
 
     @DeleteMapping("/{id}")
     public String deletedReview(@PathVariable Long id){
-        return userService.deletedReview(id);
+        return userService.deleteUser(id);
     }
 }

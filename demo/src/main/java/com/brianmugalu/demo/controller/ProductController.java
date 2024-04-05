@@ -1,5 +1,6 @@
 package com.brianmugalu.demo.controller;
 
+import com.brianmugalu.demo.repository.entity.Category;
 import com.brianmugalu.demo.repository.entity.Product;
 import com.brianmugalu.demo.repository.entity.Review;
 import com.brianmugalu.demo.service.ProductService;
@@ -38,7 +39,7 @@ public class ProductController {
         return productService.getSingleProductById(id);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Product> getAllProducts(){
         return productService.getAllProducts();
     }
@@ -48,8 +49,8 @@ public class ProductController {
         return productService.getAllProductsByMinPrice(price);
     }
 
-    @GetMapping("/category/{cat}")
-    public List<Product> getAllProductCostLess(@RequestParam(name = "maxPrice") Double price,@PathVariable(name = "cat") String category){
+    @GetMapping("/cat")
+    public List<Product> getAllProductCostLess(@RequestParam(name = "maxPrice") Double price,@RequestBody Category category){
         return productService.getAllProductCostLess(category,price);
     }
 

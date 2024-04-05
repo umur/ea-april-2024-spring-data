@@ -16,24 +16,16 @@ import java.util.List;
 public class ReviewController {
     private final ReviewService reviewService;
 
-    @PostMapping("/{id}")
-    public Review addReview(@PathVariable(name = "id") Long productId,@RequestBody Review review){
-        return reviewService.addReview(productId,review);
+    @PostMapping("/{id}?userId")
+    public Review addReview(@PathVariable(name = "id") Long productId,@RequestBody Review review,@RequestParam Long userId){
+        return reviewService.addReview(productId,review,userId);
     }
-    @PutMapping("/{id}")
-    public Category updateComment(@PathVariable(name = "id") Long reviewId, @PathVariable String comment){
-        return reviewService.updateComment(reviewId,comment);
-    }
-
-    @GetMapping("user/{id}")
-    public Category getSingleReviewsByUserId(@PathVariable(name = "id") Long UserId){
-        return  reviewService.getSingleReviewByUserId(UserId);
+    @PutMapping("/{id}?userId")
+    public Review updateComment(@PathVariable(name = "id") Long reviewId, @RequestBody String comment,@RequestParam Long userId){
+        return reviewService.updateComment(reviewId,comment,userId);
     }
 
-    @GetMapping("product/{id}")
-    public Category getReviewsByProductId(@PathVariable Long id){
-        return  reviewService.getReviewsByProductId(id);
-    }
+
 
     @DeleteMapping("/{id}")
     public String deleteReview(@PathVariable Long id){

@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 public class AddressController {
     private final AddressService addressService;
 
-    @PostMapping
-    public Address addAddress(@RequestBody Address address){
-        return addressService.addAddress(address);
+    @PostMapping("/{id}")
+    public Address addAddress(@RequestBody Address address, @PathVariable(name = "id") Long userId){
+        return addressService.addAddress(address,userId);
     }
 
     @GetMapping("/{id}")
@@ -22,8 +22,8 @@ public class AddressController {
     }
 
     @PutMapping("/{id}")
-    public Address updateAddress(@PathVariable Long id){
-        return addressService.updateAddress(id);
+    public Address updateAddress(@PathVariable Long id, @RequestBody Address address){
+        return addressService.updateAddress(id, address);
     }
 
     @DeleteMapping("/{id}")

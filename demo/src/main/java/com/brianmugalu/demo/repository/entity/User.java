@@ -1,9 +1,8 @@
 package com.brianmugalu.demo.repository.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
@@ -17,9 +16,14 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userR", cascade = CascadeType.PERSIST)
+    @JsonIgnore
     private List<Review>reviewList;
 
-    @OneToOne
+    @OneToOne(mappedBy = "user",cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     private Address address;
+
+    public void addReview (Review review){
+        reviewList.add(review);
+    }
 }

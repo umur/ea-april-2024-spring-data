@@ -63,7 +63,7 @@ public class ProductService {
         return productRepo.findAllByPriceGreaterThan(price);
     }
 
-    public List<Product> getAllProductCostLess(String category, Double price) {
+    public List<Product> getAllProductCostLess(Category category, Double price) {
         List<Product> productList = productRepo.findAllByCategory(category);
         return productList.stream()
                 .filter(product -> product.getPrice()<price)
