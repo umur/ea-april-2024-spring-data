@@ -1,0 +1,35 @@
+POST http://localhost:8080/addresses
+Content-Type: application/json
+
+{
+  "id": 1,
+  "street": "1000 N 4th",
+  "zip": 52557,
+  "city": "Fairfield"
+}
+
+
+###
+
+GET http://localhost:8080/addresses
+
+###
+
+GET http://localhost:8080/addresses/1
+
+###
+
+PUT http://localhost:8080/addresses/2
+Content-Type: application/json
+
+{
+  "id": 1,
+  "street": "2000 N 6th",
+  "zip": 52556,
+  "city": "Iowa city"
+}
+
+
+###
+
+DELETE http://localhost:8080/addresses/1
