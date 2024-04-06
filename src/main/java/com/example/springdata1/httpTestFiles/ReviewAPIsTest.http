@@ -1,0 +1,31 @@
+POST http://localhost:8080/reviews
+Content-Type: application/json
+
+{
+  "id": 1,
+  "comment": "Good"
+}
+
+
+###
+
+GET http://localhost:8080/reviews
+
+###
+
+GET http://localhost:8080/reviews/1
+
+###
+
+PUT http://localhost:8080/reviews/2
+Content-Type: application/json
+
+{
+  "id": 1,
+  "comment": "Good"
+}
+
+
+###
+
+DELETE http://localhost:8080/reviews/1

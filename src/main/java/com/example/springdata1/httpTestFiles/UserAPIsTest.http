@@ -1,0 +1,37 @@
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Janet",
+  "lastName": "Isak",
+  "email": "jk@gmail.com",
+  "password": "5678"
+}
+
+
+###
+
+GET http://localhost:8080/users
+
+###
+
+GET http://localhost:8080/users/1
+
+###
+
+PUT http://localhost:8080/users/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "firstName": "Sami",
+  "lastName": "Isak",
+  "email": "Sk@gmail.com",
+  "password": "5678"
+}
+
+
+###
+
+DELETE http://localhost:8080/users/1
