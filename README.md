@@ -23,9 +23,9 @@ In this lab you will develop a Product Review Application.
 
 * Implement the following queries by using `Naming Convention`. Create REST endpoints for them.
 	* Find all products that cost more than `minPrice`.
-	* Find all products in `cat` category and cost less than `maxPrice`.
+	* Find all products in `cat` categoryRequest and cost less than `maxPrice`.
 	* Find all products that contain `keyword` in the name.
-	* Find reviews of the product whose id is `id`. 
+	* Find reviews of the productRequest whose id is `id`. 
 
 ### Technical Details
 ---
